@@ -1,19 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0pjcwivt0p52"]
 
-[ext_resource type="Texture2D" path="res://ecran.png" id="1_kg463"]
-[ext_resource type="Script" uid="uid://cawp6nghqsv7e" path="res://texte.gd" id="2_tsuok"]
+[ext_resource type="Texture2D" uid="uid://btym88he18pg2" path="res://ecran.png" id="1_kg463"]
+[ext_resource type="Script" uid="uid://c8tmwfx0l5518" path="res://rich_text_label.gd" id="2_tsuok"]
 
 [node name="ecran de jeu" type="Node2D"]
 
-[node name="Ecran" type="Sprite2D" parent="."]
-position = Vector2(600, 400)
+[node name="Ecran2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(601, 400)
 texture = ExtResource("1_kg463")
 
-[node name="Texte" type="Label" parent="."]
-modulate = Color(0.329412, 1, 1, 1)
-offset_left = 82.0
-offset_top = 38.0
-offset_right = 240.0
-offset_bottom = 142.0
-text = "Feur"
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 652.0
+offset_bottom = 308.0
 script = ExtResource("2_tsuok")
