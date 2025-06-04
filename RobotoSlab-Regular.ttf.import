@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cbv6fd5l2movw"
-path="res://.godot/imported/NotoSans-Medium.ttf-90859ed86680a74c80f62023bf2c521e.fontdata"
+uid="uid://dyrwgk1l2sxgk"
+path="res://.godot/imported/RobotoSlab-Regular.ttf-3309503bbb576ef76a5c2b1f0781094d.fontdata"
 
 [deps]
 
-source_file="res://NotoSans-Medium.ttf"
-dest_files=["res://.godot/imported/NotoSans-Medium.ttf-90859ed86680a74c80f62023bf2c521e.fontdata"]
+source_file="res://RobotoSlab-Regular.ttf"
+dest_files=["res://.godot/imported/RobotoSlab-Regular.ttf-3309503bbb576ef76a5c2b1f0781094d.fontdata"]
 
 [params]
 
