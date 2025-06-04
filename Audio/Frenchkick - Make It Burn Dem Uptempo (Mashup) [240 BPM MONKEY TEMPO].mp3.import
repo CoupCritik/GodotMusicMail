@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brb3px5x8b8xk"
+path="res://.godot/imported/Frenchkick - Make It Burn Dem Uptempo (Mashup) [240 BPM MONKEY TEMPO].mp3-24b38f12439dd39b826312c1915d0c41.mp3str"
+
+[deps]
+
+source_file="res://Audio/Frenchkick - Make It Burn Dem Uptempo (Mashup) [240 BPM MONKEY TEMPO].mp3"
+dest_files=["res://.godot/imported/Frenchkick - Make It Burn Dem Uptempo (Mashup) [240 BPM MONKEY TEMPO].mp3-24b38f12439dd39b826312c1915d0c41.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

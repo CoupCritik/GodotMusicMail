@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var target_position = Vector2(600,700)
-var speed = 300
+var speed = 2560
 
 func _read():
 	position = Vector2(1200,700)
