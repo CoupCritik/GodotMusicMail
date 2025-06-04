@@ -7,7 +7,7 @@ func _ready() -> void:
 	$AudioStreamPlayer.play()
 	
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (beat < (($AudioStreamPlayer.get_playback_position()-5.78176879882813)/60)*bpm):
 		beat+=1
 		print(beat)

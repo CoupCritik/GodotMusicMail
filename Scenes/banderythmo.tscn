@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3mjpuwtvu7ce"]
+
+[ext_resource type="Texture2D" uid="uid://d011cc140u6v6" path="res://ecran.png" id="1_33a7h"]
+[ext_resource type="Script" uid="uid://bxyqhpqkjisan" path="res://Scripts/banderythmo.gd" id="1_hmytj"]
+[ext_resource type="Texture2D" uid="uid://b26b6igrjwtgk" path="res://barre.png" id="2_hmytj"]
+[ext_resource type="Texture2D" uid="uid://dpc5dmwyy5tsp" path="res://touche.png" id="4_i1kiu"]
+[ext_resource type="AudioStream" uid="uid://u1x24r8i5p51" path="res://Audio/In-the-hall-of-the-mountain-king.mp3" id="5_7c6kv"]
+[ext_resource type="Texture2D" uid="uid://c7wiww7s4hp3b" path="res://baton.png" id="6_6avvr"]
+[ext_resource type="Script" uid="uid://cieoij1x0j06v" path="res://Scenes/baton_2.gd" id="7_feicu"]
+[ext_resource type="Script" uid="uid://dvikqxegr30q4" path="res://Scenes/baton.gd" id="7_vguga"]
+
+[node name="bande rythmo" type="Node2D"]
+script = ExtResource("1_hmytj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7c6kv")
+
+[node name="Ecran" type="Sprite2D" parent="."]
+position = Vector2(600, 400)
+texture = ExtResource("1_33a7h")
+
+[node name="Barre" type="Sprite2D" parent="."]
+position = Vector2(600, 400)
+texture = ExtResource("2_hmytj")
+
+[node name="Baton" type="Sprite2D" parent="."]
+position = Vector2(-6, 700)
+texture = ExtResource("6_6avvr")
+script = ExtResource("7_vguga")
+
+[node name="Baton2" type="Sprite2D" parent="."]
+position = Vector2(1206, 700)
+texture = ExtResource("6_6avvr")
+script = ExtResource("7_feicu")
+
+[node name="Touche" type="Sprite2D" parent="."]
+position = Vector2(600, 700)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("4_i1kiu")
