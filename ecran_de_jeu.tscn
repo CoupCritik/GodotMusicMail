@@ -6,11 +6,12 @@
 [node name="ecran de jeu" type="Node2D"]
 
 [node name="Ecran2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(601, 400)
 texture = ExtResource("1_kg463")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 652.0
-offset_bottom = 308.0
+offset_left = 31.0
+offset_top = 22.0
+offset_right = 683.0
+offset_bottom = 330.0
 script = ExtResource("2_tsuok")
