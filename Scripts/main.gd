@@ -11,6 +11,7 @@ signal sendBeat() #Signal qui sera envoyé quand un beat doit être instancié
 
 var tempnum = 4
 var baton = preload("res://Scenes/baton.tscn")
+var texte = preload("res://Scenes/texte.tscn")
 
 #Tous les beats auquel il faut changer le bpm
 var dico = {
@@ -42,6 +43,11 @@ var topslist = []
 func _ready() -> void:
 	
 	$AudioStreamPlayer.play()
+	
+	#initialisation du texte
+	var text = texte.instantiate()
+	add_child(text)
+	move_child(text, 0)
 	
 	#Initialisation de hitlist
 	for i in range (300):

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3y3srxfp21av"]
+
+[ext_resource type="Texture2D" uid="uid://bvinu7ih1js71" path="res://Sprites/ecran.png" id="1_1k47n"]
+[ext_resource type="Script" uid="uid://disgliywrx0u2" path="res://Scripts/rich_text_label.gd" id="1_wyeox"]
+[ext_resource type="FontFile" uid="uid://bm0wrbvwokoi3" path="res://Fonts/RobotoSlab-Regular.ttf" id="2_ixip3"]
+
+[node name="Texte" type="Node2D"]
+
+[node name="Ecran" type="Sprite2D" parent="."]
+position = Vector2(600, 400)
+texture = ExtResource("1_1k47n")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 50.0
+offset_top = 52.0
+offset_right = 1150.0
+offset_bottom = 748.0
+theme_override_fonts/normal_font = ExtResource("2_ixip3")
+theme_override_font_sizes/normal_font_size = 50
+script = ExtResource("1_wyeox")
