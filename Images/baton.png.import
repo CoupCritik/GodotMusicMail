@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d011cc140u6v6"
-path="res://.godot/imported/ecran.png-599e28f901c86e055d15236d00636dfa.ctex"
+uid="uid://c7wiww7s4hp3b"
+path="res://.godot/imported/baton.png-98fed6332adc3828934eb6d631cf054c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ecran.png"
-dest_files=["res://.godot/imported/ecran.png-599e28f901c86e055d15236d00636dfa.ctex"]
+source_file="res://Images/baton.png"
+dest_files=["res://.godot/imported/baton.png-98fed6332adc3828934eb6d631cf054c.ctex"]
 
 [params]
 

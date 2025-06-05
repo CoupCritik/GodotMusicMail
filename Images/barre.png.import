@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpc5dmwyy5tsp"
-path="res://.godot/imported/touche.png-81264c22b5a510d897f9a8e1f4d2e154.ctex"
+uid="uid://b26b6igrjwtgk"
+path="res://.godot/imported/barre.png-91fe1df095f27bc02d6b7521e19b316a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://touche.png"
-dest_files=["res://.godot/imported/touche.png-81264c22b5a510d897f9a8e1f4d2e154.ctex"]
+source_file="res://Images/barre.png"
+dest_files=["res://.godot/imported/barre.png-91fe1df095f27bc02d6b7521e19b316a.ctex"]
 
 [params]
 
