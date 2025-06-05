@@ -1,14 +1,31 @@
 extends Node2D
 
-var bpm =119
+var bpm =114
 var beat = 0
-
+var topchrono = 5.78176879882813
+var tempbeat = 0
+signal OnBeat(numbeat:int)
+var dico = {
+	0:114,
+	16:118,
+	32:122
+}
 func _ready() -> void:
 	$AudioStreamPlayer.play()
 	
-	
+
+
 func _process(delta: float) -> void:
-	if (beat < (($AudioStreamPlayer.get_playback_position()-5.78176879882813)/60)*bpm):
-		beat+=1
-		print(beat)
-		print($AudioStreamPlayer.get_playback_position())
+	if (beat < tempbeat + (($AudioStreamPlayer.get_playback_position()-topchrono)/60)*bpm):
+		OnBeat.emit(beat)
+		beat +=1
+		
+
+
+func _on_on_beat(numbeat: int) -> void:
+	if dico.has(numbeat):
+		bpm = dico[numbeat]
+		tempbeat = beat
+		topchrono = $AudioStreamPlayer.get_playback_position()
+		print("changement de beat = " + str(tempbeat))
+		
