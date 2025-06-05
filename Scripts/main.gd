@@ -23,15 +23,23 @@ var dico = {
 	272:180,
 	288:188
 }
+var hitlist = []
 func _ready() -> void:
 	$AudioStreamPlayer.play()
+	for i in range (300):
+		if ((i+1)%16==0):
+			hitlist.append(false)
+		else:
+			hitlist.append(true)
 	
 
 
 func _process(delta: float) -> void:
 	if (beat < tempbeat + (($AudioStreamPlayer.get_playback_position()-topchrono)/60)*bpm):
 		OnBeat.emit(beat)
-		print(beat)
+		
+		print(str(beat) + " " + str(hitlist[beat]))
+		
 		beat +=1
 		
 		

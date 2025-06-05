@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://iocbhisqm02v"]
+[gd_scene load_steps=3 format=3 uid="uid://dxb2riyu3t4ve"]
 
 [ext_resource type="Script" uid="uid://bsfycc7bngb3s" path="res://Scripts/main.gd" id="1_jjgbg"]
 [ext_resource type="AudioStream" uid="uid://u1x24r8i5p51" path="res://Audio/In-the-hall-of-the-mountain-king.mp3" id="2_bo1nx"]
