@@ -7,7 +7,7 @@ var shrink_speed := 5
 func _process(delta: float) -> void:
 	scale = scale.lerp(normal_scale, delta * shrink_speed) #on revient à la taille normale
 
-func _on_beat_triggered(numbeat: int) -> void:
+func _on_beat_triggered() -> void:
 	
 	
 	scale = beat_scale #on rescale au moment du signal du beat (un retard possible ?)

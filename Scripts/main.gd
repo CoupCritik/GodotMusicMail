@@ -1,18 +1,24 @@
 extends Node2D
 
-var bpm = 110.43
 var beat = 0
 
-var topchrono = 5.4569 #Début de chaque changement de bpm
-var tempbeat = 0 #Numéro du beat de début de changement de phrase
 
 signal OnBeat(numbeat:int) #Signal qui sera envoyé à chaque beat
-signal sendBeat() #Signal qui sera envoyé quand un beat doit être instancié
+signal sendBeat(numbeat:int) #Signal qui sera envoyé quand un beat doit être instancié
 
-var tempnum = 4
+#Scènes à instancier
 var baton = preload("res://Scenes/baton.tscn")
 var texte = preload("res://Scenes/texte.tscn")
+var barres = preload("res://Scenes/barres.tscn")
+var hitlist = [] #Liste de si on doit appuyer à ce beat où non
 
+var bpmlist = [] #Liste du bpm associé à chaque beat
+
+var topsbeats = [] #Timing de CHAQUE BEAT
+
+var sendlist = [] #Les topschronos de chacun des beats
+
+var sendindex = 0 #Prochain beat à envoyer
 #Tous les beats auquel il faut changer le bpm
 var dico = {
 	0:110.43,
@@ -60,17 +66,13 @@ var chronoschangements = {
 	288:132.0463,
 	304:137.0349,
 	320:142.0246,
-	336:148.0
+	336:149.8346
 }
-var hitlist = [] #Liste de si on doit appuyer à ce beat où non
-
-var bpmlist = [] #Liste du bpm associé à chaque beat
-
-var topslist = []
 
 
 func _ready() -> void:
 	
+	#Lancer la musique
 	$AudioStreamPlayer.play()
 	
 	#initialisation du texte
@@ -79,49 +81,63 @@ func _ready() -> void:
 	move_child(text, 0)
 	
 	#Initialisation de hitlist
-	for i in range (400):
+	for i in range (288):
 		if ((i+1)%16==0):
 			hitlist.append(false)
 		else:
 			hitlist.append(true)
+			
+	for i in range (48):
+		if (i%16==2) or (i%16==3) or (i%16==6) or (i%16==7):
+			hitlist.append(false)
+		else:
+			hitlist.append(true)
+	
+	hitlist.append(true)
+	
 		
+	
 	#Initialisation de bpmlist
 	for i in range(len(dico.keys())-1):
 		for j in range(dico.keys()[i+1]-dico.keys()[i]):
 			bpmlist.append(dico[dico.keys()[i]])
+	bpmlist.append(110.0)
+	#Initialisation de topsbeats
+	for i in range(337):
+		topsbeats.append(chronoschangements[(i/16)*16]+(i%16)*60.0/dico[i/16*16])
 	
-	#Initialisation de topslits
-	for i in range(400):
-		top
 	
+	for i in range(337):
+		sendlist.append(topsbeats[i]-4*60.0/dico[i/16*16])
+
+
 
 
 func _process(delta: float) -> void:
-	if (beat < tempbeat + (($AudioStreamPlayer.get_playback_position()-topchrono)/60)*bpm):
+
+	#Détecte s'il faut frapper un beat à cet instant précis
+	if beat<337 and $AudioStreamPlayer.get_playback_position()>topsbeats[beat]:
 		OnBeat.emit(beat)
-		
-		print(str(beat) + " " + str(hitlist[beat]))
-		
+		print(beat)
 		beat +=1
-		
 	
-	if ($AudioStreamPlayer.get_playback_position()<5.78176879882813):
-		if ($AudioStreamPlayer.get_playback_position()>5.78176879882813-tempbeat*60.0/114):
-			pass
+	#Détecte s'il faut envoyer un beat à cet instant précis
+	if sendindex<337 and $AudioStreamPlayer.get_playback_position()>sendlist[sendindex]:
+		sendBeat.emit(sendindex)
+		sendindex+=1
 	
 
 
 func _on_on_beat(numbeat: int) -> void:
-	if hitlist[numbeat+4]:
-		var b = baton.instantiate()
-		print(b)
-		b.speedscale = bpmlist[beat+4]/(60*4.0)
-		add_child(b)
 	
-	if dico.has(numbeat):
-		bpm = dico[numbeat]
-		tempbeat = beat
-		print("Nouveau bpm")
-		topchrono = $AudioStreamPlayer.get_playback_position()
+	#Si c'est un beat à frapper, je fais grossir la touche
+	if hitlist[numbeat]:
+		$Touche._on_beat_triggered()
+
+func _on_send_beat(numbeat: int) -> void:
+	
+	if hitlist[numbeat]:
+		var b = barres.instantiate()
 		
-	
+		b.speedscale = bpmlist[numbeat]/(60*4.0)
+		add_child(b)

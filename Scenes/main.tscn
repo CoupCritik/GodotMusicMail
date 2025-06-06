@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://u1x24r8i5p51" path="res://Audio/In-the-hall-of-the-mountain-king.mp3" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://b07dr5eyb8j2c" path="res://Sprites/touche.png" id="3_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://ct62aes246k3s" path="res://Sprites/barre.png" id="3_kry3j"]
-[ext_resource type="Script" path="res://Scenes/Touche.gd" id="4_kry3j"]
+[ext_resource type="Script" uid="uid://dpi1p4nb8trd8" path="res://Scripts/Touche.gd" id="5_kry3j"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jjgbg")
@@ -20,7 +20,7 @@ texture = ExtResource("3_kry3j")
 position = Vector2(600, 700)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("3_jjvhh")
-script = ExtResource("4_kry3j")
+script = ExtResource("5_kry3j")
 
 [connection signal="OnBeat" from="." to="." method="_on_on_beat"]
-[connection signal="OnBeat" from="." to="Touche" method="_on_beat_triggered"]
+[connection signal="sendBeat" from="." to="." method="_on_send_beat"]
