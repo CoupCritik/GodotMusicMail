@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ckskmdag6jvsx"]
 
 [ext_resource type="Texture2D" uid="uid://ml21yyt236wv" path="res://Sprites/baton.png" id="1_weebp"]
-[ext_resource type="Script" uid="uid://cisov4c2x8ohl" path="res://Scripts/baton.gd" id="2_ctkc6"]
+[ext_resource type="Script" path="res://Scripts/baton.gd" id="2_ctkc6"]
 
 [sub_resource type="Animation" id="Animation_d2ugk"]
 length = 0.001
