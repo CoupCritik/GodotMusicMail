@@ -7,7 +7,7 @@ signal OnBeat(numbeat:int) #Signal qui sera envoyé à chaque beat
 signal sendBeat(numbeat:int) #Signal qui sera envoyé quand un beat doit être instancié
 
 #Scènes à instancier
-var baton = preload("res://Scenes/baton.tscn")
+
 var texte = preload("res://Scenes/texte.tscn")
 var barres = preload("res://Scenes/barres.tscn")
 var hitlist = [] #Liste de si on doit appuyer à ce beat où non
